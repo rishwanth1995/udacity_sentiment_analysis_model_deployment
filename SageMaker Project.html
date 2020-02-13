@@ -15894,7 +15894,7 @@ LSTM works better because it remembers the the sequence of the data which can pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pygmentize serve/predict.py
@@ -15986,8 +15986,7 @@ LSTM works better because it remembers the the sequence of the data which can pr
     <span class="ansi-white-fg">#         data_X   - A sequence of length 500 which represents the converted review</span>
     <span class="ansi-white-fg">#         data_len - The length of the review</span>
 
-    data_X = <span class="ansi-cyan-fg">None</span>
-    data_len = <span class="ansi-cyan-fg">None</span>
+    data_X ,data_len = convert_and_pad(model.word_dict, review_to_words(input_data))
 
     <span class="ansi-white-fg"># Using data_X and data_len we construct an appropriate input tensor. Remember</span>
     <span class="ansi-white-fg"># that our model expects input data of the form &#39;len, review[500]&#39;.</span>
